@@ -2,7 +2,7 @@
 
 var getTime = moment();
 var currentHour = getTime.hour();
-console.log(currentHour);
+
 //Function for setting date and time
 function update(){
     //Date and time
@@ -24,7 +24,6 @@ function check(){
         var name = parseInt($(this).attr("name"));
     if(name == currentHour){
         $(this).addClass("current");
-        console.log(name);
     } else if(name < currentHour){
         $(this).addClass("past");
     } else if (name > currentHour){
@@ -35,4 +34,12 @@ function check(){
 //Planner timing^^^^^^^^^
 
 //Saving Notes___________
+
+$("button").click(function(){
+    console.log(".input-group-append");
+    //var notes = $(this).textarea.text();
+    //localStorage.setItem(notes);
+})
+
+//Saving Notes^^^^^^^^^^^
 

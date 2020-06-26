@@ -1,7 +1,6 @@
 //Planner timing_________
 
-var getTime = moment();
-var currentHour = getTime.hour();
+var currentHour = moment().hour();
 
 //Function for setting date and time
 function update(){
@@ -10,15 +9,12 @@ function update(){
     inputsRefresh();
 }
 
-//Timer for running the date and time function every 60 seconds to update
+//Timer for running the date,time and inputs refresh function every 60 seconds to update
 $(document).ready(function(){
     update();
     check();
     setInterval(update, 6000)
 });
-
-
-var currentHour = moment().hour();
 
 function check(){
     $("textarea").each(function()   {
@@ -33,6 +29,7 @@ function check(){
     })};
 
 //Planner timing^^^^^^^^^
+
 
 //Saving Notes___________
 
@@ -49,11 +46,13 @@ $(".input-group").click(function(){
         var newInputs = localStorage.getItem("'"+this.id+"'");
     };
 })
-
+        // Pulling saved items in local storage and putting them on page
 function inputsRefresh(){
+        // Setting this function to apply to every textarea
     $(".input-group").each(function(){
-        //this.children[1].value;
+        // Setting variable for items stored in local storage
        var inputs = localStorage.getItem("'"+this.id+"'");
+       // setting the textarea values to the items in local storage
        $(this.children[1]).text(inputs);
     })
 };

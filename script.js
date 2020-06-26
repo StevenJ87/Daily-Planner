@@ -35,10 +35,16 @@ function check(){
 
 //Saving Notes___________
 
-$("button").click(function(){
-    console.log(".input-group-append");
-    //var notes = $(this).textarea.text();
-    //localStorage.setItem(notes);
+$(".input-group").click(function(){
+    // Text area input
+    var inputs = this.children[1].value
+
+    // Making sure its just button that is clicked
+    if((event.target).type === "button"){
+
+        // Storing inputs in local storage
+        localStorage.setItem("'"+this.id+"'", inputs);
+    };
 })
 
 //Saving Notes^^^^^^^^^^^

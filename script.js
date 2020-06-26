@@ -7,6 +7,7 @@ var currentHour = getTime.hour();
 function update(){
     //Date and time
     $("#currentDay").text(moment().format('LLLL'));
+    inputsRefresh();
 }
 
 //Timer for running the date and time function every 60 seconds to update
@@ -44,8 +45,18 @@ $(".input-group").click(function(){
 
         // Storing inputs in local storage
         localStorage.setItem("'"+this.id+"'", inputs);
+
+        var newInputs = localStorage.getItem("'"+this.id+"'");
     };
 })
+
+function inputsRefresh(){
+    $(".input-group").each(function(){
+        //this.children[1].value;
+       var inputs = localStorage.getItem("'"+this.id+"'");
+       $(this.children[1]).text(inputs);
+    })
+};
 
 //Saving Notes^^^^^^^^^^^
 

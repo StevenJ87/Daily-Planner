@@ -16,8 +16,8 @@ $(document).ready(function(){
     setInterval(update, 6000)
 });
 
-var getTime = moment();
-var currentHour = getTime.hour();
+
+var currentHour = moment().hour();
 
 function check(){
     $("textarea").each(function()   {

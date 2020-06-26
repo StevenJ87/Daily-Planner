@@ -43,7 +43,6 @@ $(".input-group").click(function(){
         // Storing inputs in local storage
         localStorage.setItem("'"+this.id+"'", inputs);
 
-        var newInputs = localStorage.getItem("'"+this.id+"'");
     };
 })
         // Pulling saved items in local storage and putting them on page
